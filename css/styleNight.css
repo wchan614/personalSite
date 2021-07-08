@@ -1,0 +1,330 @@
+body {
+    margin: auto 0;
+    overflow: hidden;
+}
+
+section {
+    min-height: 100vh;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.fadeable {
+    transition: opacity 0.3s ease-in-out;
+}
+
+header {
+    background-color: #53439b;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 2.5em;
+    z-index: 100;
+}
+
+header div {
+    position: relative;
+    top: 40%;
+    bottom: 40%;
+    text-align:center;
+    color: #000000;
+}
+
+
+#credit {
+    position: absolute;
+    font-size: 0.4em;
+    right: 0;
+    width: 8%;
+    bottom: 0;
+
+}
+
+#cubeCanvas {
+    position: absolute;
+    left: 50%;
+
+    transform: translateX(-50%);
+}
+
+#title {
+    background-color: rgba(107, 50, 50, 0.445);
+    position: absolute;
+    z-index: 5;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 100;
+    color: rgb(255, 255, 255);
+    font-size: 12em;
+    text-align: center;
+
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -20%);
+    cursor: pointer;
+}
+
+audio {
+    position: absolute;
+    display: none;
+    top: 90%;
+    left: 97%;
+    transform: translate(-95%, -97%);
+}
+
+#controlPanel {
+    height: 60px;
+    width: 290px;
+
+    background-color:  #55333342;
+    position: absolute;
+    bottom: 2%;
+    right: 2%;
+}
+
+#titleForm {
+    height: 60px;
+    width: 230px;
+    background-color:  #55333342;
+    position: absolute;
+    left: 2%;
+    bottom: 2%;
+}
+
+#titleFormTextbox {
+    margin-top: 7px;
+    margin-left: 10px;
+    background-color: #a879796c;
+
+    font-family: 'Roboto Mono', monospace;
+    outline: none;
+    box-shadow: none;
+    border: none;
+    height: 40px;
+    width: 200px;
+    font-size: 1.4em;
+    color: rgb(255, 255, 255);
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: rgba(0, 0, 0, 0.39);
+    opacity: 1; /* Firefox */
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: rgba(0, 0, 0, 0.39);
+  }
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */
+    color: rgba(0, 0, 0, 0.39);
+  }
+
+#themeButton {
+    height: 35px;
+    width: 35px;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 400;
+
+    margin: 12px;
+    background-color: #ffffff46;
+    border: none;
+    color: #FFFFFF;
+}
+
+#playButton {
+    height: 35px;
+    width: 35px;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 400;
+
+    margin: 12px;
+    background-color: #ffffff46;
+    border: none;
+    color: #FFFFFF;
+}
+
+#volumeSlider {
+    position: relative;
+    top: 10%;
+    margin: 12px;
+}
+
+@-moz-document url-prefix(){
+    #volumeSlider {
+        position: relative;
+        top: 10%;
+        margin: 0;
+        background-color: white;
+        overflow: hidden;
+        width: 50%;
+    }
+}
+
+#backgroundVideo {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 90%;
+    min-height: 90%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    transform: translateX(-50%) translateY(-50%);
+    filter: brightness(90%);
+}
+
+button:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.bgGradient {
+    background: linear-gradient(270deg, #80293c, #662121, #30302d, #3d1e31,#80293c, #662121, #30302d, #3d1e31);
+    background-size: 1400% 1400%;
+    -webkit-animation: backgroundGradient 30s ease infinite;
+    -moz-animation: backgroundGradient 30s ease infinite;
+    animation: backgroundGradient 30s ease infinite;
+    position: fixed;
+    z-index: -101;
+}
+
+@-webkit-keyframes backgroundGradient {
+    0%{background-position:88% 0%}
+    50%{background-position:13% 100%}
+    100%{background-position:88% 0%}
+}
+@-moz-keyframes backgroundGradient {
+    0%{background-position:88% 0%}
+    50%{background-position:13% 100%}
+    100%{background-position:88% 0%}
+}
+@keyframes backgroundGradient {
+    0%{background-position:88% 0%}
+    50%{background-position:13% 100%}
+    100%{background-position:88% 0%}
+}
+
+
+@media only screen and (max-width: 1550px) {
+    #title {
+        font-size: 8em;
+    }
+
+    #cubeCanvas {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 250px;
+        width: 250px;
+    }
+}
+
+
+@media only screen and (max-width: 1060px) {
+    #title {
+        font-size: 5em;
+    }
+
+    #cubeCanvas {
+        position: absolute;
+        left: 50%;
+
+        transform: translateX(-50%);
+        height: 160px;
+        width: 160px;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    #title {
+        font-size: 3em;
+    }
+
+    #cubeCanvas {
+        position: absolute;
+        left: 50%;
+        top: 5%;
+        transform: translateX(-50%,-5%);
+        height: 110px;
+        width: 110px;
+    }
+
+    #controlPanel {
+        height: 40px;
+        width: 155px;
+
+        background-color:  #55333342;
+        position: absolute;
+        bottom: 2%;
+        right: 2%;
+    }
+
+    #themeButton {
+        height: 25px;
+        width: 25px;
+        font-family: 'Roboto Mono', monospace;
+        font-weight: 400;
+    
+        margin: 8px 3px 8px 5px;
+        background-color: #ffffff46;
+        border: none;
+        color: #FFFFFF;
+    }
+    
+    #playButton {
+        height: 25px;
+        width: 25px;
+        font-family: 'Roboto Mono', monospace;
+        font-weight: 400;
+    
+        margin: 8px 3px 8px 3px;
+        background-color: #ffffff46;
+        border: none;
+        color: #FFFFFF;
+    }
+    
+    #volumeSlider {
+        position: relative;
+        top: 10%;
+        margin: 2px 0px 2px 2px;
+        width: 45%;
+    }
+    
+    @-moz-document url-prefix(){
+        #volumeSlider {
+            position: relative;
+            top: 10%;
+            margin: 0;
+            background-color: white;
+            overflow: hidden;
+            width: 45%;
+        }
+    }
+    
+    #titleForm {
+        height: 40px;
+        width: 155px;
+        background-color:  #55333342;
+        position: absolute;
+        left: 2%;
+        bottom: 2%;
+    }
+
+    #titleFormTextbox {
+        margin-top: 4px;
+        margin-left: 6px;
+        background-color: #a879796c;
+
+        font-family: 'Roboto Mono', monospace;
+        outline: none;
+        box-shadow: none;
+        border: none;
+        height: 30px;
+        width: 135px;
+        font-size: 0.8em;
+        color: rgb(255, 255, 255);
+    }
+}

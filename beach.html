@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styleDay.css?v=1" type="text/css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;400&display=swap" rel="stylesheet">
+
+    <title>R E L A X</title>
+
+</head>
+
+<body onload="Init()">
+    <header class="fadeable">
+        <div>Fullscreen Beach Demo</div>
+        <span id="credit">William Chan</span>
+    </header>
+    <section class="bgGradient">
+        <canvas id="cubeCanvas" width="500" height="300"></canvas>
+        <div id="title" onclick="ToggleTitle()">RELAX</div>
+        <div id="videoContainer">
+            <video id="backgroundVideo"  loop muted autoplay>
+                <source src="assets/videos/beachDay.mp4" codecs="avc1.42E01E, mp4a.40.2" type="video/mp4">
+                Browser doesn't support playing this video :(
+            </video>
+        </div>
+
+        
+        <div id="controlPanel">
+            <button id="themeButton" onclick="ToggleTheme()">☽</button>
+            <button id="playButton"  onclick="ToggleMusic()">▶</button>
+            <input id="volumeSlider" onchange="UpdateVolume()" type="range" min="0" max="100" value="20">
+        </div>
+        <audio id="backgroundAudio" loop controls >
+            <source src="assets/music/beach.mp3" type="audio/mp3">
+            Your browser does not support the audio element. :(
+        </audio>
+
+        <form id="titleForm" autocomplete="off" onkeypress="UpdateTitle(event)">
+            <input id="titleFormTextbox" type="text" placeholder="Enter a phrase.">
+        </form>
+
+    </section>
+</body>
+
+
+<script src="./scripts/beach/renderCube.js?=1.2"></script>
+<script src="./scripts/beach/controlPanel.js?=1.2"></script>
+<script src="./scripts/beach/title.js?=1.2"></script>
+<script src="./scripts/beach/main.js?=1.2"></script>
+<script
+  src="https://code.jquery.com/jquery-3.6.0.js"
+  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script>
+</script>
+</html>

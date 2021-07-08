@@ -1,0 +1,420 @@
+/* William Chan 2020 */
+
+/* smooth scrolling */
+html,body {
+    scroll-behavior: smooth;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+}
+
+/* transparent scrollbar if allowed */
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; 
+}
+
+/* allow hidden scroll */
+body {
+    overflow-y: hidden;
+}
+
+nav {
+    font-family: "Manrope", sans-serif;
+    background-color: #1aafad;
+    height: 70px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    transition: background-color 320ms linear; /* navbar transition */
+}
+
+    #navBox {
+        float: right;
+        margin: 25px;
+        word-spacing: 50px;
+        margin-right: 55px;
+    }
+
+    .navText{
+        color: #fff;
+        text-decoration: none;
+    }
+
+    .navText:hover {
+        color: #000;
+    }
+
+/* scroll snapping to sections */
+.scrollContainer { 
+    scroll-behavior: smooth;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    left: 0;
+    min-height: 950px;
+    overflow: scroll;
+    overflow-x: hidden;
+    position: absolute;
+    scroll-snap-type: y mandatory; 
+    z-index: 10;
+}
+
+    /* sections will be scrollable to be scrollsnappable */
+    .scrollable {
+        scroll-margin: 0px;
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+    }
+
+header {
+    background-color: #171717;
+    margin: 0 auto;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+    .headerBox {
+        position: absolute;
+        left: max(calc(50% - 250px), 200px);
+        right: max(calc(50% - 250px), 200px);
+        margin-top: 200px;
+        margin-bottom: 200px;
+        color: #fff;
+        z-index: 4;
+        text-align: center;
+    }
+
+    #headerTitle {
+        margin-top: 35%;
+        text-decoration: none;
+        font-size: 4.5em;
+        font-family: 'Lato', sans-serif;
+    }
+
+    #headerBegin {
+        margin-top: 75px;
+        font-family: 'Questrial', sans-serif;
+    }
+
+    .switch {
+        position: relative;
+        display: inline-block;
+        margin-top: 10px;
+        width: 30px;
+        height: 17px;
+      }
+      
+      .switch input { 
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+      
+      .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        -webkit-transition: .4s;
+        transition: .4s;
+      }
+      
+      .slider:before {
+        position: absolute;
+        content: "";
+        height: 13px;
+        width: 13px;
+        left: 2px;
+        bottom: 2px;
+        background-color: white;
+        -webkit-transition: .4s;
+        transition: .4s;
+      }
+      
+      input:checked + .slider {
+        background-color: #2196F3;
+      }
+      
+      input:focus + .slider {
+        box-shadow: 0 0 1px #2196F3;
+      }
+      
+      input:checked + .slider:before {
+        transform: translateX(13px);
+      }
+      
+      /* Rounded sliders */
+      .slider.round {
+        border-radius: 34px;
+      }
+      
+      .slider.round:before {
+        border-radius: 50%;
+      }
+      
+        #viewMode {
+            font-family: 'Questrial', sans-serif;
+            color: #636363;
+            font-size: 1.2em;
+        }
+
+        .nextSection {
+            text-decoration: none;
+            color: #0d91d8;
+            cursor: pointer;
+            font-style: italic;
+            font-size: 1.2em;
+        }
+
+        .nextSection:hover {
+            color: #de714a;
+            margin-top: 20px;
+        }
+
+        .gradient {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            background: #a622c3;
+            background: radial-gradient(circle, #f8b7ff1f 0%, #000000 100%);
+            opacity: 0.85;
+        }
+
+    header video {
+        min-height: 100%;
+        min-width: 100%;
+        filter: blur(3px) brightness(20%);
+    }
+
+section {
+    display: block;
+    height: 100%;
+    width: 100%;
+    background-color: #7a3f9f;
+    box-sizing: border-box;
+    padding-top: 70px;
+    border: 1px solid #ffffff;
+}
+    ul {
+        list-style-position: inside;
+    }
+    
+    section:nth-child(even) {
+        background-color: #4545a2;
+    }
+
+    .sectionTitle {
+        font-size: 120px;
+        font-family: 'Questrial', sans-serif;
+        position: absolute;
+        left: 12%;
+        right: 88%;
+        z-index: 3;
+        color: #fff;
+        border: 1px solid #fff;
+    }
+
+    .sectionTitle:hover {
+        color: #000;
+    }
+
+    .sectionContainer {
+        font-family: 'Questrial', sans-serif;
+        min-height: 650px;
+        height: 60%;
+        position: absolute;
+        left: 12%;
+        right: 12%;
+        margin-top: 100px;
+        margin-bottom: 10%;
+        background: #333;
+        z-index: 1;
+        opacity: 0.95;
+        padding-top: 4%;
+        border-radius: 5px;
+    }
+
+    .topPadding{
+        left: 15%;
+        right: 15%;
+        top: 35%;
+        bottom: 35%;
+        position: absolute;
+    }
+
+#shrineContainer {
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+#shrineContainer img {
+    height: 200px;
+    padding-left: 2%;
+}
+
+#shibaInuContainer {
+    margin-top: 2%;
+    padding-left: 2%;
+    margin-bottom: 2%;
+}
+
+#shibaInuContainer img {
+    padding: 2%;
+    height: 200px;
+}
+
+/* Chatbox for Me */
+.containerWilliam {
+    font-size: 1.3em;
+    color: #fff;
+    padding: 0 2%;
+    margin-bottom: 2%;
+    line-height: 1.6;
+    text-align: left;
+}
+
+/* Chatbox for user */
+.containerYou {
+    font-size: 1.3em;
+    color: #8dcdfe;
+    padding: 0 2%;
+    margin-bottom: 2%;
+    line-height: 1.6;
+    text-align: right;
+}
+
+.containerWilliam:hover {
+    color: #a9ff86;
+}
+
+.containerYou:hover {
+    color: #31ffb0;
+}
+
+.workText {
+    font-size: 1.3em;
+    color: #22d6d3;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.workLinks {
+    color: #eee;
+    font-size: 0.8em;
+    text-decoration: none;
+    text-align: center;
+    display: block;
+}
+
+.workLinks:hover {
+    color: #88fab4;
+}
+
+footer {
+    background-color: #161116;
+    color: #fff;
+    font-family: "Manrope", sans-serif;
+    height: 125px;
+    width: 100%;
+    font-size: 0.9em;
+    text-align: center;
+    padding-top: 125px;
+}
+
+#backgroud-gradient {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+/* background gradients and transitions below */
+.oddGradient {
+    background: linear-gradient(139deg, #6f94df, #0ad19f, #5053e6, #50bde6);
+    background-size: 800% 800%;
+    animation: gradient 30s ease infinite;
+}
+
+.evenGradient {
+    background: linear-gradient(319deg, #564dca, #ff7878, #e6b072, #ca86ce);
+    background-size: 800% 800%;
+    animation: gradient 30s ease infinite;
+}
+
+    @keyframes gradient {
+        0% {
+            background-position: 0% 58%;
+        }
+
+        50% {
+            background-position: 100% 43%;
+        }
+
+        100% {
+            background-position: 0% 58%;
+        }
+    }
+
+/* resize on 1050px or less width */
+@media only screen and (max-width: 1050px) {
+    #shibaInuContainer {
+        text-align: center;
+        margin-top: 2%;
+        margin-bottom: 2%;
+    }
+
+    #shibaInuContainer img {
+        padding: 1%;
+        height: 150px;
+    }
+}
+
+/* resize on 650px or less width */
+@media only screen and (max-width: 650px) {
+    #navBox {
+        float: right;
+        margin: 25px;
+        word-spacing: 25px;
+        margin-right: 25px;
+    }
+
+    .headerBox {
+        left: 20%;
+        right: 20%;
+    }
+
+    .sectionTitle {
+        font-size: 100px;
+    }
+
+    .sectionContainer {
+        margin-top: 85px;
+    }
+
+    .containerWilliam {
+        font-size: 1.1em;
+        padding: 0 5%;
+    }
+
+    .containerYou {
+        font-size: 1.1em;
+        padding: 0 5%;
+    }
+
+    #shrineContainer img {
+        height: 200px;
+        padding-left: 5%;
+    }
+}

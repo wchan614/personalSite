@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Manrope&family=Noto+Sans+JP&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/sorting.css?v=1.1">
+    <title>Live Interactive Sorting Algorithms</title>
+</head>
+
+<body onload="Init();">
+    <header class="fadeable">
+        <div>Live Interactive Sorting Algorithms</div>
+        <span id="credit">William Chan</span>
+    </header>
+    <section class="background">
+
+        <div id="menuContainer" class="fadeable">
+            <div id="menuSelectContainer"></div>
+            <div id="menuFooter">
+                <div id="sizeSliderContainer">
+                    <div>Data Size: </div>
+                    <input id="sizeSlider" type="range" min="8" max="120" value="50" onchange="UpdateDataSize()">
+                </div>
+
+                <div id="dataFormatContainer">
+                    <form id="dataFormatter" onchange="ToggleDataFormat()">
+                        <input type="radio" id="randomData" name="dataFormatter" value="random">
+                        <label for="random">Random</label><br>
+                        <input type="radio" id="reversedData" name="dataFormatter" value="reversed">
+                        <label for="reversed">Reversed</label><br>
+                        <input type="radio" id="nearlySortedData" name="dataFormatter" value="nearly sorted">
+                        <label for="nearlySorted">Nearly Sorted</label>  
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div id="contentContainer" class="fadeable">
+            <div id="contentDisplay">
+                <canvas id="canvas" onclick="StartSort()"></canvas>
+            </div>
+
+            <div id="contentInfo">
+                <div id="contentTitle"></div>
+                <div id="contentBody"></div>
+            </div>
+        </div>
+
+    </section>
+    
+    <script src="scripts/sorting/Sorting.js?v=1.2"></script>
+    <script src="scripts/sorting/Content.js?v=1.2"></script>
+    <script src="scripts/sorting/main.js?v=1.2"></script>
+    <script src="scripts/sorting/sortingInfo.js?v=1.2"></script>
+</body>
+
+</html>

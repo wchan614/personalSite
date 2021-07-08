@@ -1,0 +1,190 @@
+<!--William Chan 2020-->
+
+<!---------------boilerplate---------------------->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope&family=Noto+Sans+JP&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css?v=1.1"  type="text/css">
+    <title>Project - William Chan</title>
+</head>
+<!------------------------------------------------>
+
+<body onload="LoadToggle();">
+    <!--scrollsnap div wrapper-->
+    <div class="scrollContainer">
+        <!--Nav-->
+        <nav id="nav">
+            <div id="navBox">
+                <a class="navText" href="#header">Home</a>
+                <a class="navText" href="#about">Me</a>
+                <a class="navText" href="#projects">Projects</a>
+                <a class="navText" href="#hobbies">Hobbies</a>
+                <a class="navText" href="#dogs">Dogs</a>
+                <a class="navText" href="#works">Works</a>
+            </div>
+        </nav>
+        <!--Header-->
+        <header id="header" class="scrollable">
+            <div class="headerBox">
+                <div id="headerTitle"><a href="#about"></a>William Chan</a></div>
+                <div id="headerBegin">
+                    <!-- Implement standard morde or chatmode -->
+                    <div id="viewMode">Chatlog Display</div>
+                    <label class="switch">
+                        <input id="viewModeToggle" onclick="UpdateToggle()" type="checkbox">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+            </div>
+            <div class="gradient"></div>
+            <video loop muted autoplay>
+                <source src="assets/videos/header.mp4" type="video/mp4">
+            </video>
+        </header>
+
+        <!--About-->
+        <section id="about" class="scrollable oddGradient">
+            <div class="sectionTitle">Me</div>
+            <div class="sectionContainer">
+                <div class="containerWilliam">
+                    Hi there, I'm William.
+                </div>
+                <div class="containerYou">
+                    Hi William, please tell me about yourself.
+                </div>
+                <div class="containerWilliam">
+                    I studied at University of Waterloo for Computer Science<br>
+                    from 2016 to 2020.
+                </div>
+                <div class="containerWilliam">
+                    I learned Python, C, C++, and Java along the way.<br>
+                    My favourite would definitely be Python <br>
+                    because of how flexible and practical it is.
+                </div>
+                <div class="containerWilliam">
+                    I worked on some early cancer dianogistical stuff with A.I<br>
+                    at Sunnybrook Hospital over the summer of 2019 too.
+                </div>
+                <div class="containerWilliam">
+                   <a  class="workLinks" href="./William_Chan_2021_July.pdf" target="_blank">Here's my resume if you're interested. </a>
+                </div>
+                <div class="containerYou">
+                    Interesting.
+                </div>
+                <div class="containerYou">
+                    <a class="nextSection" href="#projects">
+                        What kind of stuff have you been working on?
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!--Projects-->
+        <section id="projects" class="scrollable evenGradient">
+            <div class="sectionTitle">Projects</div>
+            <div class="sectionContainer">
+                <div class="containerWilliam">
+                    Here's some of the projects I've created in the past.<br>
+                    <ul>
+                        <li>Router Protocol - OSPF</li>
+                        <li>Small Linux Operating System - Page Tables, Execv, Fork</li>
+                        <li>Neural Network - Backprop, Prediction, Persistant Memory</li>
+                        <li>And some other small projects</li>
+                    </ul>
+                </div>
+                <div class="containerYou">
+                    Which project was your favorite to work on?
+                </div>
+                <div class="containerWilliam">
+                    My favourite project to work on would definitely be the time I wrote my linux operating system. <br>
+                    It was written in C and I had a lot of fun troubleshooting and handling the kernel logic.
+                </div>
+                <div class="containerYou">
+                    <a class="nextSection" href="#hobbies">
+                        I see. What about your hobbies? What do you like to do?
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!--Hobbies-->
+        <section id="hobbies" class="scrollable oddGradient">
+            <div class="sectionTitle">Hobbies</div>
+            <div class="sectionContainer">
+                <div class="containerWilliam">
+                    I like to draw sometimes and learn new languages.<br>
+                    I'm currently learning Japanese since I find the language pretty interesting.<br>
+                    Hopefully once I master Japanese, I can travel to Japan and visit the Motosumi Inari Shrine!<br>
+                </div>
+                <div id="shrineContainer" class="imgContainer">
+                    <img id="shrineImg" src="assets/images/motonosumiInariShrine.jpg" alt="Motonosumi Inari Shrine">
+                </div>
+                <div class="containerYou">
+                    The shrine looks beautiful. Is there anything else you like about Japan?
+                </div>
+                <div class="containerWilliam">
+                    Other than that, I really love the national dog of Japan.
+                </div>
+                <div class="containerYou">
+                    <a class="nextSection" href="#dogs">Dog...?</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dogs-->
+        <section id="dogs" class="scrollable evenGradient">
+            <div class="sectionTitle">Dogs</div>
+            <div class="sectionContainer">
+                <div class="containerWilliam">
+                    The Shiba Inu is my favourite kind of dog. It's considered a national treasure of Japan.<br>
+                    I think they're extremely cute. Just look at them.
+                </div>
+                <div id="shibaInuContainer" class="imgContainer">
+                    <img src="assets/images/shibaInu1.jpg" alt="Shiba Inu image 1">
+                    <img src="assets/images/shibaInu2.jpg" alt="Shiba Inu image 2">
+                    <img src="assets/images/shibaInu3.jpg" alt="Shiba Inu image 3">
+                </div>
+                <div class="containerWilliam">
+                    I don't own any dogs myself but if I did, I would definitely own a shiba inu.
+                </div>
+                <div class="containerYou">
+                    How interesting and cute.
+                </div>
+                <div class="containerYou">
+                    <a class="nextSection" href="#header">
+                        Thanks William, it was nice getting to know you.
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Showcase -->
+        <section id="works" class="scrollable oddGradient">
+            <div class="sectionTitle">Works</div>
+            <div class="sectionContainer">
+                <div class="workText topPadding">
+                    Showcase work here: <br>
+                    <a class="workLinks" href="./matrix.html" target="_blank">Matrix Rain</a>
+                    <a class="workLinks" href="./sorting.html" target="_blank">Sorting Algorithms</a>
+                    <a class="workLinks" href="https://pokemonproject.somee.com/" target="_blank">Pokemon Encyclopedia</a>
+                    <a class="workLinks" href="./beach.html" target="_blank">Beach Demo</a>
+                    <a class="workLinks" href="memorytest/index.php" target="_blank">Memory Test</a>
+                </div>
+            </div>
+        </section>
+
+        <!--Footer-->
+        <footer id="footer" class="scrollable">should be unreachable</footer>
+    </div>
+
+    <!--Scripts-->
+    <script src="scripts/main/view_toggle.js?v=1.01"></script>
+    <script src="scripts/main/nav.js?v=1.01"></script>
+    <script src="scripts/main/footer.js?v=1.01"></script>
+</body>
+</html>
